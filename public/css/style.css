@@ -27,7 +27,7 @@ article, aside, figure, footer, header, hgroup, nav, section {
 }
 
 body { 
-  font: normal .80em arial, sans-serif;
+  font: normal .80em Times, serif;
   background: #000 url(../images/CloudBack2X.jpg) no-repeat center fixed;
   color: #444;
 }
@@ -48,7 +48,7 @@ h1, h2 {
 }
 
 h1, h2 { 
-  font: normal 140% arial, sans-serif;
+  font: normal 140% Times, serif;
   margin: 0 0 15px 0;
   padding: 15px 0 5px 0;
   color: #222;

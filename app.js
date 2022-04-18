@@ -33,13 +33,18 @@ var authService;
 var authServiceLocation = process.env.AUTH_SERVICE;
 if (authServiceLocation) 
 {
-	logger.info("Use authservice:"+authServiceLocation);
 	var authModule;
-	if (authServiceLocation.indexOf(":")>0) // This is to use micro services
-		authModule = "acmeairhttp";
-	else
-		authModule= authServiceLocation;
-	
+    if (authServiceLocation.indexOf(":")>0)
+    {       
+        // This is to use micro services
+        logger.info("For Microservice Using authservice:"+authServiceLocation);
+        authModule = "acmeairhttp";
+    }
+    else
+    {
+        logger.info("For Monolithix Using authservice:"+authServiceLocation);
+        authModule= authServiceLocation;
+    }
 	authService = new require('./'+authModule+'/index.js')(settings);
 	if (authService && "true"==process.env.enableHystrix) // wrap into command pattern
 	{
